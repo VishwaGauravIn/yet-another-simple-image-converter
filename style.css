@@ -24,13 +24,14 @@ html {
   padding: 1rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: var(--primary);
-  font-size: 2rem;
 }
 
 .title {
   font-family: "Cinzel Decorative", cursive;
   letter-spacing: 0.3rem;
+  font-size: 2rem;
 }
 
 /*  BUTTONS  */
@@ -89,4 +90,11 @@ html {
 .ext-link {
   width: 1rem;
   margin-left: 0.2rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .navbar {
+    justify-content: left;
+  }
 }
