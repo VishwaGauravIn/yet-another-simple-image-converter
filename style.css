@@ -1,0 +1,10 @@
+/* Applying poppins font to html */
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
