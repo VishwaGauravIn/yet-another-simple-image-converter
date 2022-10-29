@@ -49,7 +49,27 @@
     </nav>
     <!-- Main Component -->
     <main class="parent">
-      <div class="div1"></div>
+      <div class="div1">
+        <img src="https://spiffy.itsvg.in/og.png" alt="" />
+        <!-- Select Image -->
+        <div class="btn btn__primary">
+          Select Image
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="ext-link"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
+            />
+          </svg>
+        </div>
+      </div>
       <div class="div2">
         <h1>Editor</h1>
         <span class="span1">
@@ -91,11 +111,71 @@
             </label>
           </div>
         </span>
-        <span class="span1">
+        <!-- Format Selection -->
+        <span class="span1 span2">
           <h3>Format:</h3>
-          
+          <div class="radio">
+            <div class="radio__1">
+              <input
+                id="radio-1"
+                type="radio"
+                name="radio"
+                value="png"
+                checked
+              />
+              <label for="radio-1"></label>
+              <span>PNG</span>
+            </div>
+
+            <div class="radio__2">
+              <input id="radio-2" type="radio" name="radio" value="jpg" />
+              <label for="radio-2"></label>
+              <span>JPG</span>
+            </div>
+            <div class="radio__3">
+              <input id="radio-3" type="radio" name="radio" value="bmp" />
+              <label for="radio-3"></label>
+              <span>BMP</span>
+            </div>
+
+            <div class="radio__4">
+              <input id="radio-4" type="radio" name="radio" value="webp" />
+              <label for="radio-4"></label>
+              <span>WEBP</span>
+            </div>
+          </div>
         </span>
+        <!-- File Name -->
+        <span class="span1">
+          <h3>File Name:</h3>
+          <input
+            type="text"
+            name="filename"
+            id="filename"
+            class="form__input"
+            placeholder="yasic"
+          />
+        </span>
+        <!-- Download Button -->
+        <div class="btn btn__primary">
+          Download
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="ext-link"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"
+            />
+          </svg>
+        </div>
       </div>
     </main>
+    <script src="script.jss"></script>
   </body>
 </html>
