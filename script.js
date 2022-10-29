@@ -6,8 +6,8 @@ const inpWidth = document.getElementById("width");
 const inpHeight = document.getElementById("height");
 
 // Variables
-let realWidth = prevImg.naturalWidth;
-let realHeight = prevImg.naturalHeight;
+let realWidth = prevImg.clientWidth;
+let realHeight = prevImg.clientHeight;
 
 function selFile() {
   fileInput.click();
@@ -22,10 +22,67 @@ function fileSelected() {
     // setting file name
     prevImg.src = URL.createObjectURL(file);
     // updating new height and width
-    realWidth = prevImg.naturalWidth;
-    realHeight = prevImg.naturalHeight;
-    // setting height and width input value
-    inpHeight.value = realHeight;
-    inpWidth.value = realWidth;
+    setTimeout(() => {
+      realWidth = prevImg.clientWidth;
+      realHeight = prevImg.clientHeight;
+      // setting height and width input value
+      inpHeight.value = realHeight;
+      inpWidth.value = realWidth;
+    }, 100);
   }
 }
+
+function downloadFile() {
+  imgConverter(prevImg.src, realWidth, realHeight, "png", inpHeight.value/realHeight).then((dataUri) => {
+    const a = document.createElement("a");
+    a.href = dataUri;
+    a.style.display = "none";
+    a.download = fileName.value + ".png";
+    a.click();
+  });
+}
+
+// via: https://www.npmjs.com/package/image-converter-pro
+const imgConverter = (
+  Dataurl,
+  width = 500,
+  height = 500,
+  format = "png",
+  scale = 1
+) =>
+  new Promise((resolve, reject) => {
+    let canvas;
+    let ctx;
+    let img;
+
+    img = new Image();
+    img.src = Dataurl;
+    img.onload = () => {
+      canvas = document.createElement("canvas");
+      canvas.width = img.width * scale;
+      canvas.height = img.height * scale;
+      ctx = canvas.getContext("2d");
+      ctx.drawImage(
+        img,
+        0,
+        0,
+        img.width,
+        img.height,
+        0,
+        0,
+        width * scale,
+        height * scale
+      );
+
+      img = new Image();
+      img.src = canvas.toDataURL(`image/${format}`);
+      img.onload = () => {
+        canvas = document.createElement("canvas");
+        canvas.width = width * scale;
+        canvas.height = height * scale;
+        ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0);
+        resolve(canvas.toDataURL(`image/${format}`));
+      };
+    };
+  });
