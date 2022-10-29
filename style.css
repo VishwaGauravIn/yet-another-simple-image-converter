@@ -92,9 +92,112 @@ html {
   margin-left: 0.2rem;
 }
 
+/* Main */
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.div1 {
+  display: flex;
+  border: 1px solid red;
+  flex: 0.6;
+  padding: 1rem;
+}
+.div2 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  flex: 0.4;
+  padding: 1rem;
+}
+
+/*  FORM  */
+.form {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+.form__input {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var(--white);
+  background: none;
+  font-family: inherit;
+  color: var(--greyDark);
+}
+.form__input::-moz-placeholder {
+  color: var(--greyLight-3);
+}
+.form__input:-ms-input-placeholder {
+  color: var(--greyLight-3);
+}
+.form__input::placeholder {
+  color: var(--greyLight-3);
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+.span1 {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+  font-weight: 500;
+}
+
+/*  CHECKBOX  */
+.checkbox__1 {
+  display: flex;
+  justify-content: center;
+}
+.checkbox__1 input {
+  display: none;
+}
+.checkbox__1 label {
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+.checkbox__1 label:hover svg {
+  color: var(--primary);
+}
+.checkbox__1 label svg {
+  width: 75%;
+  color: var(--greyDark);
+  transition: 0.3s ease;
+}
+.checkbox__1 input:checked ~ label {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.checkbox__1 input:checked ~ label svg {
+  color: var(--primary);
+}
+
 /* Media Queries */
 @media screen and (max-width: 600px) {
   .navbar {
     justify-content: left;
+  }
+  .parent {
+    flex-direction: column;
   }
 }
