@@ -101,7 +101,13 @@
         <span class="span1">
           <p>Maintain aspect ratio:</p>
           <div class="checkbox__1">
-            <input id="checkbox-1" type="checkbox" id="aspect" checked disabled="true"/>
+            <input
+              id="checkbox-1"
+              type="checkbox"
+              id="aspect"
+              checked
+              disabled="true"
+            />
             <label for="checkbox-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,24 +137,43 @@
                 name="radio"
                 value="png"
                 checked
+                onclick="changeFormat('png')"
               />
               <label for="radio-1"></label>
               <span>PNG</span>
             </div>
 
             <div class="radio__2">
-              <input id="radio-2" type="radio" name="radio" value="jpg" />
+              <input
+                id="radio-2"
+                type="radio"
+                name="radio"
+                value="jpg"
+                onclick="changeFormat('jpg')"
+              />
               <label for="radio-2"></label>
               <span>JPG</span>
             </div>
             <div class="radio__3">
-              <input id="radio-3" type="radio" name="radio" value="bmp" />
+              <input
+                id="radio-3"
+                type="radio"
+                name="radio"
+                value="bmp"
+                onclick="changeFormat('bmp')"
+              />
               <label for="radio-3"></label>
               <span>BMP</span>
             </div>
 
             <div class="radio__4">
-              <input id="radio-4" type="radio" name="radio" value="webp" />
+              <input
+                id="radio-4"
+                type="radio"
+                name="radio"
+                value="webp"
+                onclick="changeFormat('webp')"
+              />
               <label for="radio-4"></label>
               <span>WEBP</span>
             </div>

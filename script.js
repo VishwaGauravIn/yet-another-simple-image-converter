@@ -8,6 +8,7 @@ const inpHeight = document.getElementById("height");
 // Variables
 let realWidth = prevImg.clientWidth;
 let realHeight = prevImg.clientHeight;
+let format = "png";
 
 function selFile() {
   fileInput.click();
@@ -40,18 +41,23 @@ function onHChange() {
   inpWidth.value = (inpHeight.value / realHeight) * realWidth;
 }
 
+function changeFormat(f) {
+  format = f;
+}
+
 function downloadFile() {
+  // TODO: Checks
   imgConverter(
     prevImg.src,
     realWidth,
     realHeight,
-    "png",
+    format,
     inpHeight.value / realHeight
   ).then((dataUri) => {
     const a = document.createElement("a");
     a.href = dataUri;
     a.style.display = "none";
-    a.download = fileName.value + ".png";
+    a.download = fileName.value + "." + format;
     a.click();
   });
 }
