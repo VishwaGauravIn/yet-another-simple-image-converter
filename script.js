@@ -46,20 +46,23 @@ function changeFormat(f) {
 }
 
 function downloadFile() {
-  // TODO: Checks
-  imgConverter(
-    prevImg.src,
-    realWidth,
-    realHeight,
-    format,
-    inpHeight.value / realHeight
-  ).then((dataUri) => {
-    const a = document.createElement("a");
-    a.href = dataUri;
-    a.style.display = "none";
-    a.download = fileName.value + "." + format;
-    a.click();
-  });
+  if (inpHeight.value > 8000 || inpWidth.value > 8000) {
+    alert("Height or Width can not be greater than 8000px");
+  } else {
+    imgConverter(
+      prevImg.src,
+      realWidth,
+      realHeight,
+      format,
+      inpHeight.value / realHeight
+    ).then((dataUri) => {
+      const a = document.createElement("a");
+      a.href = dataUri;
+      a.style.display = "none";
+      a.download = fileName.value || "spiffy" + "." + format;
+      a.click();
+    });
+  }
 }
 
 // via: https://www.npmjs.com/package/image-converter-pro
