@@ -180,13 +180,15 @@ html {
   justify-content: center;
 }
 .checkbox__1 input {
-  display: none;
+  width: 0px;
+  height: 0px;
+  opacity: 0;
 }
 .checkbox__1 label {
   box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
     -0.2rem -0.2rem 0.5rem var(--white);
-  cursor: pointer;
   position: relative;
+  cursor: not-allowed;
   display: flex;
   justify-content: center;
   align-items: center;

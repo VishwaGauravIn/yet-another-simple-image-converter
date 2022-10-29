@@ -32,8 +32,22 @@ function fileSelected() {
   }
 }
 
+function onWChange() {
+  inpHeight.value = (inpWidth.value / realWidth) * realHeight;
+}
+
+function onHChange() {
+  inpWidth.value = (inpHeight.value / realHeight) * realWidth;
+}
+
 function downloadFile() {
-  imgConverter(prevImg.src, realWidth, realHeight, "png", inpHeight.value/realHeight).then((dataUri) => {
+  imgConverter(
+    prevImg.src,
+    realWidth,
+    realHeight,
+    "png",
+    inpHeight.value / realHeight
+  ).then((dataUri) => {
     const a = document.createElement("a");
     a.href = dataUri;
     a.style.display = "none";
