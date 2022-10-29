@@ -1,6 +1,18 @@
+:root {
+  --primary-light: #8abdff;
+  --primary: #6d5dfc;
+  --primary-dark: #5b0eeb;
+  --white: #ffffff;
+  --greyLight-1: #e4ebf5;
+  --greyLight-2: #c8d0e7;
+  --greyLight-3: #bec8e4;
+  --greyDark: #9baacf;
+}
+
 /* Applying poppins font to html */
 html {
   font-family: "Poppins", sans-serif;
+  background-color: #e4ebf5;
 }
 
 * {
@@ -8,3 +20,73 @@ html {
   margin: 0;
 }
 
+.navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+.title {
+  font-family: "Cinzel Decorative", cursive;
+  letter-spacing: 0.3rem;
+}
+
+/*  BUTTONS  */
+.btn {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 9999rem;
+  border: none;
+  box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+    -0.2rem -0.2rem 0.5rem var(--white);
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  transition: all 0.35s ease-in-out;
+  text-decoration: none;
+}
+.btn__primary {
+  grid-column: 1/2;
+  grid-row: 4/5;
+  background: var(--primary);
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-light),
+    inset -0.2rem -0.2rem 1rem var(--primary-dark),
+    0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
+  color: var(--greyLight-1);
+}
+.btn__primary:hover {
+  color: var(--white);
+}
+.btn__primary:active {
+  box-shadow: inset 0.2rem 0.2rem 1rem var(--primary-dark),
+    inset -0.2rem -0.2rem 1rem var(--primary-light);
+}
+.btn__secondary {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  color: var(--greyDark);
+  position: absolute;
+  right: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+.btn__secondary:hover {
+  color: var(--primary);
+}
+.btn__secondary:active {
+  box-shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2),
+    inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+.btn p {
+  font-size: 1.6rem;
+}
+.ext-link {
+  width: 1rem;
+  margin-left: 0.2rem;
+}
