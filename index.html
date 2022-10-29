@@ -50,9 +50,9 @@
     <!-- Main Component -->
     <main class="parent">
       <div class="div1">
-        <img src="https://spiffy.itsvg.in/og.png" alt="" />
+        <img src="https://spiffy.itsvg.in/og.png" alt="" id="prevImg"/>
         <!-- Select Image -->
-        <div class="btn btn__primary">
+        <button class="btn btn__primary" onclick="selFile()">
           Select Image
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,8 @@
               d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75"
             />
           </svg>
-        </div>
+        </button>
+        <input type="file" name="" id="file_selector" onchange="fileSelected()" accept="image/*">
       </div>
       <div class="div2">
         <h1>Editor</h1>
@@ -176,6 +177,6 @@
         </div>
       </div>
     </main>
-    <script src="script.jss"></script>
+    <script src="script.js"></script>
   </body>
 </html>
