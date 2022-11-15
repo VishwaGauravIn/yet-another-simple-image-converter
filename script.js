@@ -59,7 +59,7 @@ function downloadFile() {
       const a = document.createElement("a");
       a.href = dataUri;
       a.style.display = "none";
-      a.download = fileName.value || "spiffy" + "." + format;
+      a.download = fileName.value + "." + format || "spiffy" + "." + format;
       a.click();
     });
   }
